@@ -1,0 +1,132 @@
+* {
+  font-family: "Times New Roman", Times, serif;
+}
+
+body {
+  height: 97vh;
+  width: 99%;
+  background: #fceed1;
+}
+
+.container {
+  width: 100%;
+  text-align: center;
+  margin: auto;
+}
+
+.container div {
+  position: relative;
+}
+
+label {
+  position: absolute;
+  margin: 15px 10px;
+  padding: 5px 10px;
+  transition: 0.5s;
+}
+
+.active {
+  transform: translateY(-29px);
+  background: #fceed1;
+}
+
+input[type="text"] {
+  width: 300px;
+  height: 50px;
+  padding: 5px 20px;
+  border: 1px solid #000;
+  font-weight: 800;
+  letter-spacing: 2px;
+  background: transparent;
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+
+button {
+  width: 150px;
+  height: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: #313133;
+  background: #4fd1c5;
+  background: linear-gradient(
+    90deg,
+    rgba(129, 230, 217, 1) 0%,
+    rgba(79, 209, 197, 1) 100%
+  );
+  border: none;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+button::before {
+  content: "";
+  border-radius: 1000px;
+  width: calc(150px + 5px);
+  height: calc(40px + 5px);
+  border: 2px solid #00ffcb;
+  box-shadow: 0 0 60px rgba(0, 255, 203, 0.64);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+button:hover,
+button:focus {
+  color: #313133;
+  transform: translateY(-6px);
+}
+
+button:hover::before,
+button:focus::before {
+  opacity: 1;
+}
+
+button::after {
+  content: "";
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  border: 6px solid #00ffcb;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 1.5s infinite;
+}
+
+button:hover::after,
+button:focus::after {
+  animation: none;
+  display: none;
+}
+
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 60px;
+    height: 60px;
+    opacity: 0;
+  }
+}
+
+#hasil,
+#real-time {
+  height: 20px;
+}
